@@ -35,7 +35,12 @@
 
   function submitHandler(event) {
     console.log(inputValue);
-  }
+	}
+
+	let isChecked = false;
+	let text = '';
+	let select = 1;
+	let sex = 'male';
 </script>
 
 <style>
@@ -102,3 +107,22 @@
 <p>
   {@html htmlString}
 </p>
+
+<input type="text" bind:value={name}>
+<hr>
+<input type="checkbox" bind:checked={isChecked}>
+{isChecked}
+<hr>
+<textarea bind:value={text}></textarea>
+<div style="white-space: pre-wrap">{text}</div>
+<hr>
+<select bind:value={select}>
+	<option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+</select>
+<hr>
+<input type="radio" value="female" bind:group={sex}>Female
+<input type="radio" value="male" bind:group={sex}>Male
+<br>
+<div>{sex}</div>
